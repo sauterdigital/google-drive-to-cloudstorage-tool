@@ -1,0 +1,41 @@
+[project]
+name = "gdrive-to-gcs"
+version = "0.1.0"
+description = "CLI tool to transfer files from Google Drive to Google Cloud Storage"
+requires-python = ">=3.10"
+dependencies = [
+    "textual>=0.80.0",
+    "google-api-python-client>=2.100.0",
+    "google-auth>=2.23.0",
+    "google-cloud-storage>=2.13.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-mock>=3.12",
+    "ruff>=0.1.0",
+    "mypy>=1.7",
+]
+
+[project.scripts]
+gdrive-to-gcs = "gdrive_to_gcs.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gdrive_to_gcs"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

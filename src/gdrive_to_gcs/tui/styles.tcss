@@ -1,0 +1,66 @@
+#main-panels {
+    height: 1fr;
+}
+
+DriveTreePanel {
+    width: 1fr;
+    border: solid $primary;
+}
+
+BucketListPanel {
+    width: 1fr;
+    border: solid $secondary;
+}
+
+.panel-title {
+    text-style: bold;
+    padding: 0 1;
+    background: $primary-background;
+    color: $text;
+    height: 1;
+}
+
+TransferProgressPanel {
+    height: 3;
+    dock: bottom;
+    padding: 0 1;
+    display: none;
+}
+
+TransferProgressPanel.active {
+    display: block;
+}
+
+.status-label {
+    width: 1fr;
+    padding: 0 1;
+}
+
+.bytes-label {
+    width: auto;
+    padding: 0 1;
+}
+
+/* Modal screens */
+ConfirmTransferScreen, ErrorScreen, TransferReportScreen, HelpScreen {
+    align: center middle;
+}
+
+#modal-container {
+    width: 60;
+    height: auto;
+    max-height: 80%;
+    border: thick $primary;
+    padding: 1 2;
+    background: $surface;
+}
+
+#modal-container Button {
+    margin: 1 1 0 0;
+}
+
+.prefix-input {
+    dock: bottom;
+    height: 3;
+    padding: 0 1;
+}
