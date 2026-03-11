@@ -20,3 +20,4 @@ env/
 Thumbs.db
 token.json
 credentials.json
+uv.lock

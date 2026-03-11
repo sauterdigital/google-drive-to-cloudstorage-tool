@@ -4,11 +4,12 @@ version = "0.1.0"
 description = "CLI tool to transfer files from Google Drive to Google Cloud Storage"
 requires-python = ">=3.10"
 dependencies = [
-    "textual>=0.80.0",
+    "colorama>=0.4.6",
+    "pyfiglet>=1.0.2",
     "google-api-python-client>=2.100.0",
     "google-auth>=2.23.0",
     "google-cloud-storage>=2.13.0",
-    "rich>=13.0.0",
+    "rich>=14.3.3",
 ]
 
 [project.optional-dependencies]

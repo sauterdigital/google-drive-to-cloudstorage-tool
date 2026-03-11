@@ -59,16 +59,15 @@ def _handle_transfer(args: list[str]) -> None:
         print("Error: --drive-folder or --folder-id is required.", file=sys.stderr)
         sys.exit(1)
 
-    from gdrive_to_gcs.tui.app import TransferApp
+    from gdrive_to_gcs.tui.app import TransferRunner
 
-    app = TransferApp(
+    TransferRunner(
         drive_folder=drive_folder,
         folder_id=folder_id,
         bucket=bucket,
         prefix=prefix,
         project=project,
-    )
-    app.run()
+    ).run()
 
 
 def _extract_option(args: list[str], long_flag: str, short_flag: str) -> str | None:
