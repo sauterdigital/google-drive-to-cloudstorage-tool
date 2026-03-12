@@ -48,7 +48,7 @@ def _print_banner() -> None:
         [_BOLD + _GREEN  + line + _RESET for line in raw_top.split("\n")]
         + [_BOLD + _BLUE + line + _RESET for line in raw_bot.split("\n")]
     )
-    subtitle = _DIM + _GRAY + "  Transfer files from Google Drive to Cloud Storage" + _RESET
+    subtitle = _DIM + _GRAY + "(2026) Sauter Digital - Transfer files from Google Drive to Cloud Storage" + _RESET
 
     # Merge side-by-side: logo (left) + title (right)
     n = max(len(logo_lines), len(title_lines))

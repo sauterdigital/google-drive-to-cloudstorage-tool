@@ -80,9 +80,9 @@ def _extract_option(args: list[str], long_flag: str, short_flag: str) -> str | N
 
 
 def _print_help() -> None:
+    from gdrive_to_gcs.tui.app import _print_banner
+    _print_banner()
     print(
-        "gdrive-to-gcs - Transfer files from Google Drive to Google Cloud Storage\n"
-        "\n"
         "Usage:\n"
         "  gdrive-to-gcs transfer --drive-folder PATH --bucket BUCKET [options]\n"
         "  gdrive-to-gcs transfer --folder-id ID --bucket BUCKET [options]\n"
