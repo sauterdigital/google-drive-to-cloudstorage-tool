@@ -1,6 +1,12 @@
 # Drive to Cloud Storage
 
+Sauter Digital - 2026
+
 A command-line tool to transfer files from **Google Drive** to **Google Cloud Storage (GCS)**, with colored terminal output and a Drive-logo ASCII banner.
+
+![Image](image.png)
+
+Powered by Gustavo Wanderly & Gabriel Carvalho
 
 ---
 
