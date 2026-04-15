@@ -45,6 +45,9 @@ def list_files(
                 pageSize=page_size,
                 fields=f"nextPageToken, files({FILE_FIELDS})",
                 pageToken=page_token,
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True,
+                corpora="allDrives",
             )
             .execute()
         )
@@ -71,7 +74,7 @@ def resolve_path(service, path: str) -> dict:
 
     if not segments:
         # Return root folder
-        return service.files().get(fileId="root", fields=FILE_FIELDS).execute()
+        return service.files().get(fileId="root", fields=FILE_FIELDS, supportsAllDrives=True).execute()
 
     current_id = "root"
     for segment in segments:
@@ -82,7 +85,14 @@ def resolve_path(service, path: str) -> dict:
         )
         resp = (
             service.files()
-            .list(q=q, fields=f"files({FILE_FIELDS})", pageSize=2)
+            .list(
+                q=q,
+                fields=f"files({FILE_FIELDS})",
+                pageSize=2,
+                supportsAllDrives=True,
+                includeItemsFromAllDrives=True,
+                corpora="allDrives",
+            )
             .execute()
         )
         files = resp.get("files", [])
@@ -141,7 +151,7 @@ def download_file(
         export_mime, _ = WORKSPACE_EXPORT_FORMATS[mime_type]
         request = service.files().export_media(fileId=file_id, mimeType=export_mime)
     else:
-        request = service.files().get_media(fileId=file_id)
+        request = service.files().get_media(fileId=file_id, supportsAllDrives=True)
 
     downloader = MediaIoBaseDownload(buffer, request, chunksize=chunk_size)
 

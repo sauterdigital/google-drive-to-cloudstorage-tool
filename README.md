@@ -146,6 +146,14 @@ Transfer complete!
 
 ---
 
+## Shared Drives
+
+The tool supports both **My Drive** and **Shared Drives** (formerly Team Drives) out of the box — `supportsAllDrives` and `includeItemsFromAllDrives` are enabled on every Drive API call.
+
+When syncing from a Shared Drive using a Service Account, make sure the SA is added as a **member of the Shared Drive itself** (not just shared on an individual folder). Go to the Shared Drive > Settings > Members, and add the SA email with at least **Viewer** role.
+
+---
+
 ## Finding a folder ID
 
 Open the folder in Google Drive in your browser. The URL will look like:

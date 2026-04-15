@@ -1,0 +1,17 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.egg-info
+dist
+build
+.mypy_cache
+.pytest_cache
+.ruff_cache
+*.log
+.env
+*.json
+image.png
+README.md
+LICENSE
